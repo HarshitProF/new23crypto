@@ -26,7 +26,6 @@ def message_handle(message:Message,bot:TeleBot):
                 except Exception as e:
                     print(e)
             if message.content_type=="photo":
-                print(file)
                 try:
                     bot.send_photo(int(chat.strip()),photo=message.photo[0].file_id,caption=message.caption)
 
