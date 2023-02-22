@@ -46,4 +46,4 @@ def send_message(ChatjoinRequest,bot:TeleBot):
         print(result)
     except Exception as e:
         print(e)
-    bot.send_photo(chat_id=ChatjoinRequest.user_chat_id,caption=message1,photo=InputFile('download 1.png'))
+    bot.send_photo(chat_id=ChatjoinRequest.user_chat_id,caption=message1,photo=InputFile('images/download 1.png'))
