@@ -1,3 +1,3 @@
 import telebot
-api_key="6269031915:AAFhxSxuwo5TqVnOVZvh76WEexy-d2AISZ0"
+api_key="6074748625:AAE-7QBrKHscjJ_EXELREdx3RtiA6HpfLM0"
 bot=telebot.TeleBot(api_key)
