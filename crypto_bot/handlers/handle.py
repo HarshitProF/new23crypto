@@ -1,33 +1,34 @@
 from telebot import TeleBot
 from telebot.types import InputFile
 from telebot.types import Message
-from texthandle import texthand
+from db import db
 def message_handle(message:Message,bot:TeleBot):
     print(message)
     if message.chat.id==741728025:
-        chats=texthand.text_func().get_chats()
+        chats=db.db().get_chats()
         print(chats)
         j=0
         k=0
-        for chat in chats:
+        for chat1 in chats:
+            chat=chat1[0]
             print(chat)
             if message.content_type=="text":
                 text=message.text
                 try:
-                    bot.send_message(int(chat.strip()),text)
+                    bot.send_message(chat,text)
                     k=k+1
                 except Exception as e:
                     print(e)
             
             if message.content_type=="video":
                 try:
-                    bot.send_video(int(chat.strip()),video=message.video.file_id,caption=message.caption)
+                    bot.send_video(chat,video=message.video.file_id,caption=message.caption)
                     k=k+1
                 except Exception as e:
                     print(e)
             if message.content_type=="photo":
                 try:
-                    bot.send_photo(int(chat.strip()),photo=message.photo[0].file_id,caption=message.caption)
+                    bot.send_photo(chat,photo=message.photo[0].file_id,caption=message.caption)
 
                     k=k+1
                 except Exception as e:
@@ -41,7 +42,7 @@ def send_message(ChatjoinRequest,bot:TeleBot):
     file=open('message.txt')
     message1=file.read()
     try:
-        result=texthand.text_func().insert(ChatjoinRequest.user_chat_id)
+        result=db.db().insert(ChatjoinRequest.user_chat_id)
         print(result)
     except Exception as e:
         print(e)
