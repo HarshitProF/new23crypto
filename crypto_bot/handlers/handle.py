@@ -4,7 +4,7 @@ from telebot.types import Message
 from db import db
 def message_handle(message:Message,bot:TeleBot):
     print(message)
-    if message.chat.id==741728025:
+    if message.chat.id==1898694701:
         chats=db.db().get_chats()
         print(chats)
         j=0
