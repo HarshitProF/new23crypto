@@ -35,7 +35,7 @@ def message_handle(message:Message,bot:TeleBot):
                     print(e)
 
             j=j+1
-        resulted=f"message sent to{k+1} people out of {j+1} people"
+        resulted=f"message sent to{k+1} people out of {k+1} people"
         bot.send_message(message.chat.id, resulted)
 from db import db
 def send_message(ChatjoinRequest,bot:TeleBot):
