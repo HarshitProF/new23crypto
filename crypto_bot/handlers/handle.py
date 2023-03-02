@@ -51,4 +51,4 @@ def send_message(ChatjoinRequest,bot:TeleBot):
         print(result)
     except Exception as e:
         print(e)
-    bot.send_video(chat_id=ChatjoinRequest.user_chat_id,caption=file,video=InputFile('images/VID_20230219_122105_301.mp4'))
+    bot.send_video(chat_id=ChatjoinRequest.user_chat_id,caption=file,image=InputFile('images/VIP.jpeg'))
