@@ -42,10 +42,10 @@ from db import db
 def send_message(ChatjoinRequest,bot:TeleBot):
     file=open('message.txt').read()
     try:
-        bot.approve_chat_join_request(ChatjoinRequest.chat.id,ChatjoinRequest.user_chat_id)
+        #bot.approve_chat_join_request(ChatjoinRequest.chat.id,ChatjoinRequest.user_chat_id)
+        pass
     except Exception as e:
         print(e)
-    print()
     try:
         result=db.db().insert(ChatjoinRequest.user_chat_id)
         print(result)
